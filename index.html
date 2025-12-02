@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUSH-IA – Todolist Jour 01</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Ma todolist</h1>
+        <p class="app-subtitle">
+          Petit projet HTML/CSS/JS pour le rush <span>RUSH‑IA – Jour 01</span>.
+        </p>
+      </header>
+
+      <main class="app-main">
+        <section class="task-input">
+          <h2>Ajouter une tâche</h2>
+          <form id="task-form">
+            <div class="input-group">
+              <input
+                type="text"
+                id="task-input"
+                placeholder="Ex : Revoir le README, tester la todolist..."
+                autocomplete="off"
+                required
+              />
+              <button type="submit">Ajouter</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="task-lists">
+          <div class="task-column">
+            <h2>À faire</h2>
+            <ul id="todo-list" class="task-list" aria-label="Tâches à faire"></ul>
+          </div>
+
+          <div class="task-column">
+            <h2>Terminées</h2>
+            <ul
+              id="done-list"
+              class="task-list task-list--done"
+              aria-label="Tâches terminées"
+            ></ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <span>RUSH‑IA – Jour 01</span>
+        <span class="separator">•</span>
+        <span>HTML / CSS / JavaScript vanilla</span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,251 @@
+/* Reset léger & base typographique */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top left, #1e293b, #020617);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  backdrop-filter: blur(12px);
+  padding: 24px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.app-header h1 {
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  color: #f9fafb;
+  margin-bottom: 4px;
+}
+
+.app-subtitle {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.app-subtitle span {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.task-input h2,
+.task-column h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+#task-input::placeholder {
+  color: #6b7280;
+}
+
+#task-input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+  background-color: rgba(15, 23, 42, 1);
+}
+
+button[type="submit"] {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #0b1120;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+button[type="submit"]:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.task-lists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.task-column {
+  background: radial-gradient(circle at top, #020617, #020617);
+  border-radius: 14px;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  padding: 12px 12px 10px;
+}
+
+.task-list {
+  list-style: none;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.task-list--done {
+  opacity: 0.9;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 9px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  transition: background-color 0.12s ease, border-color 0.12s ease,
+    transform 0.08s ease;
+}
+
+.task-item:hover {
+  background: rgba(15, 23, 42, 1);
+  border-color: rgba(148, 163, 184, 0.8);
+  transform: translateY(-1px);
+}
+
+.task-item--done {
+  opacity: 0.85;
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+  border-style: dashed;
+}
+
+.task-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #38bdf8;
+  cursor: pointer;
+}
+
+.task-label {
+  flex: 1;
+  font-size: 0.92rem;
+  color: #e5e7eb;
+}
+
+.task-label--done {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.task-meta {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.app-footer .separator {
+  opacity: 0.7;
+}
+
+/* Scrollbar discrète pour les listes */
+.task-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.6);
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  body {
+    padding: 12px;
+  }
+
+  .app {
+    padding: 18px 16px 12px;
+  }
+
+  .task-lists {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+
