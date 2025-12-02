@@ -21,6 +21,14 @@ Pas de base de données externe : les données sont **simulées/stockées en JSO
 
 ---
 
+## Démo (capture d’écran)
+
+Un aperçu de l’interface de la todolist :
+
+![Capture d’écran de la todolist](img/Capture%20d%E2%80%99%C3%A9cran%202025-12-02%20165054.png)
+
+---
+
 ## Contexte "RUSH-IA" – Jour 1
 
 - **Type de projet** : projet perso dans le cadre d’un rush d’apprentissage.
